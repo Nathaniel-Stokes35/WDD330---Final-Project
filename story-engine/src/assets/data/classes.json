@@ -1,0 +1,5 @@
+[
+  { "id": "warrior", "name": "Warrior", "description": "A master of strength and discipline, charging headlong into danger." },
+  { "id": "mage", "name": "Mage", "description": "A scholar of arcane forces, weaving reality through will and knowledge." },
+  { "id": "rogue", "name": "Rogue", "description": "A shadow in motion, cunning and precise, ever chasing opportunity." }
+]

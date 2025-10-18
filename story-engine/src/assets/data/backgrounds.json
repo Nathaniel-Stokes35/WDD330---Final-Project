@@ -1,0 +1,5 @@
+[
+  { "id": "pauper", "name": "Pauper", "description": "You’ve known hunger and hardship, and learned to survive by wit and grit.", "att": ["agi", "wis"]},
+  { "id": "scholar", "name": "Scholar", "description": "Your early life was spent in study, searching for meaning in forgotten words.","att": ["int", "dex"]}, 
+  { "id": "farmer", "name": "Farmer", "description": "The soil taught you patience, and the seasons gave you strength.", "att": ["end", "str"]} 
+]

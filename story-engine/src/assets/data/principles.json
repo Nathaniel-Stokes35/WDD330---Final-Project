@@ -1,0 +1,5 @@
+[
+  { "id": "risk_stability", "left": "Risk", "right": "Stability", "description": "Will you gamble for greatness, or build your future on steady ground?" },
+  { "id": "self_others", "left": "Self", "right": "Others", "description": "Do you pursue personal ambition, or live for the well-being of those around you?" },
+  { "id": "familiar_change", "left": "Familiar", "right": "Change", "description": "Do you seek comfort in what you know, or embrace transformation?" }
+]
