@@ -2,7 +2,7 @@ import { getCharacter, setCharacter, setVariable } from './state.mjs';
 
 export async function loadJSON(path) {
     try {
-        const response = await fetch(`./${path}`);
+        const response = await fetch(`${path}`);
         if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
         return await response.json();
     } catch (err) {
