@@ -1,5 +1,12 @@
-import storyboard from '../assets/storyboard.json';
 import { getCharacter, setCharacter, setVariable } from './state.mjs';
+
+export async function loadJSON(path) {
+    const response = await fetch(`./${path}`);
+    const storyboard = await response.json();
+    return storyboard;
+}
+
+const storyboard = await loadJSON('../assets/storyboard.json');
 
 export async function isUrban(lat, lon, radius = 500, threshold = 50) {
   const query = `

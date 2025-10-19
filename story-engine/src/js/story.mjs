@@ -1,5 +1,5 @@
-import { getCharacter, getVariable, setCharacter } from './state.mjs';
-import { renderOptionsWindow, renderEvent } from './render.mjs';
+import { getCharacter, getVariable } from './state.mjs';
+import { renderEvent } from './render.mjs';
 import { generateScenario } from './utils.mjs';
 
 const character = getCharacter();

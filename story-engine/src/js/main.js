@@ -1,6 +1,5 @@
 import { getCharacter, clearCharacter } from './state.mjs';
 import { renderEventWindow, renderOptionsWindow, renderEvent } from './render.mjs';
-import { generateScenario } from './utils.mjs';
 
 const character = getCharacter();
 

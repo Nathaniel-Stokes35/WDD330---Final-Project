@@ -1,9 +1,10 @@
-import classes from '../assets/data/classes.json' assert { type: 'json' };
-import backgrounds from '../assets/data/backgrounds.json' assert { type: 'json' };
-import principles from '../assets/data/principles.json' assert { type: 'json' };
 import { setCharacter, getCharacter, clearCharacter, setVariable } from './state.mjs';
 import { renderOptionsWindow } from './render.mjs';
-import { generateScenario } from './utils.mjs';
+import { generateScenario, loadJSON } from './utils.mjs';
+
+const classes = loadJSON('../assets/data/classes.json');
+const backgrounds = loadJSON('../assets/data/backgrounds.json');
+const principles = loadJSON('../assets/data/principles.json');
 
 document.addEventListener('DOMContentLoaded', () => {
     const character = getCharacter();
