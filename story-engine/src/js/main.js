@@ -25,7 +25,7 @@ if (!character) {
         {
             label: 'Continue',
             onClick: async () => {
-                window.location.href = '/story/index.html';
+                window.location.href = './story/index.html';
             }
         },
         {
@@ -36,7 +36,7 @@ if (!character) {
                 );
                 if (confirmDelete) {
                     clearCharacter();
-                    window.location.href = '/character/index.html';
+                    window.location.href = './character/index.html';
                 }
             }
         }
