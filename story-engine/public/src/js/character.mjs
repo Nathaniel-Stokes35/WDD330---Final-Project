@@ -63,7 +63,6 @@ async function loadForm() {
                 principle: pr.id,
                 summary: summarySentence,
                 level: 1,
-                lastEvent: lastEvent,
                 attributes: baseAttributes
             };
 
