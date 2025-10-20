@@ -1,5 +1,6 @@
 import { setCharacter, getCharacter, clearCharacter, setVariable } from './state.mjs';
 import { renderOptionsWindow } from './render.mjs';
+import { loadJSON } from './utils.mjs';
 
 loadForm();
 
