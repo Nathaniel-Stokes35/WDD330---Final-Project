@@ -9,6 +9,11 @@
         <link rel="stylesheet" href="/src/css/style.css" />
         <link rel="stylesheet" href="/src/css/character-creation.css" />
         <script src="/src/js/character.mjs" type="module" defer></script>
+        <script type="module">
+            console.log("Inline script test");
+            document.addEventListener('DOMContentLoaded', () => console.log("DOMContentLoaded inline works"));
+        </script>
+
     </head>
     <body>
         <main class="character-container">
