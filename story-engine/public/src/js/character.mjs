@@ -2,12 +2,43 @@ import { setCharacter, getCharacter, clearCharacter, setVariable } from './state
 import { renderOptionsWindow } from './render.mjs';
 import { generateScenario, loadJSON } from './utils.mjs';
 
-console.log("Character module loaded... PASS");
+loadForm();
 
-document.addEventListener('DOMContentLoaded', async () => {
-    console.log("DOMContentLoaded... PASS");
+async function loadForm() {
+    const character = getCharacter();
 
-    // Handle form submission
+    // Load all JSON data
+    const classes = await loadJSON('/assets/data/classes.json');
+    const backgrounds = await loadJSON('/assets/data/backgrounds.json');
+    const principles = await loadJSON('/assets/data/principles.json');
+
+    // Populate selects    // Grab DOM elements
+    const form = document.getElementById('characterForm');
+    const summary = document.getElementById('characterSummary');
+    const summaryText = document.getElementById('summaryText');
+
+    if (!form || !summary || !summaryText) {
+        console.error("Missing DOM elements for character creation!");
+        return;
+    }
+
+    // If a character already exists, show summary
+    if (character) {
+        renderSummary(character);
+        return;
+    }
+
+    // Populate dropdown selects
+    populateSelect('charClass', classes);
+    populateSelect('charBackground', backgrounds);
+    populateSelect('charPrinciple', principles.map(p => ({ id: p.id, name: `${p.left} / ${p.right}` })));
+
+    // Helper: populate a <select> with data
+    function populateSelect(id, data) {
+        const select = document.getElementById(id);
+        if (!select) return;
+        select.innerHTML = data.map(d => `<option value="${d.id}">${d.name}</option>`).join('');
+    }
     form.addEventListener('submit', async (e) => {
         e.preventDefault();
 
@@ -67,44 +98,5 @@ document.addEventListener('DOMContentLoaded', async () => {
                 }
             }
         ]);
-    }
-});
-
-loadForm();
-
-async function loadForm() {
-    const character = getCharacter();
-
-    // Load all JSON data
-    const classes = await loadJSON('/assets/data/classes.json');
-    const backgrounds = await loadJSON('/assets/data/backgrounds.json');
-    const principles = await loadJSON('/assets/data/principles.json');
-
-    // Populate selects    // Grab DOM elements
-    const form = document.getElementById('characterForm');
-    const summary = document.getElementById('characterSummary');
-    const summaryText = document.getElementById('summaryText');
-
-    if (!form || !summary || !summaryText) {
-        console.error("Missing DOM elements for character creation!");
-        return;
-    }
-
-    // If a character already exists, show summary
-    if (character) {
-        renderSummary(character);
-        return;
-    }
-
-    // Populate dropdown selects
-    populateSelect('charClass', classes);
-    populateSelect('charBackground', backgrounds);
-    populateSelect('charPrinciple', principles.map(p => ({ id: p.id, name: `${p.left} / ${p.right}` })));
-
-    // Helper: populate a <select> with data
-    function populateSelect(id, data) {
-        const select = document.getElementById(id);
-        if (!select) return;
-        select.innerHTML = data.map(d => `<option value="${d.id}">${d.name}</option>`).join('');
     }
 }
