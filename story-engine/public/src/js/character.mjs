@@ -15,7 +15,7 @@ async function loadVariables() {
     principles = await loadJSON('/assets/data/principles.json');
 }
 
-document.addEventListener('DOMContentLoaded', async () => {
+document.addEventListener('DOMContentLoaded', () => {
     console.log("Second Test... PASS");
     const character = getCharacter();
 
