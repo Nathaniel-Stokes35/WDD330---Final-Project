@@ -2,12 +2,12 @@ import { setCharacter, getCharacter, clearCharacter, setVariable } from './state
 import { renderOptionsWindow } from './render.mjs';
 import { generateScenario, loadJSON } from './utils.mjs';
 
-const classes = await loadJSON('/assets/data/classes.json');
-const backgrounds = await loadJSON('/assets/data/backgrounds.json');
-const principles = await loadJSON('/assets/data/principles.json');
-
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', async () => {
     const character = getCharacter();
+
+    const classes = await loadJSON('/assets/data/classes.json');
+    const backgrounds = await loadJSON('/assets/data/backgrounds.json');
+    const principles = await loadJSON('/assets/data/principles.json');
 
     const form = document.getElementById('characterForm');
     const summary = document.getElementById('characterSummary');
@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const cls = classes.find(c => c.id === document.getElementById('charClass').value);
         const bg = backgrounds.find(b => b.id === document.getElementById('charBackground').value);
         const pr = principles.find(p => p.id === document.getElementById('charPrinciple').value);
-        const lastEvent = generateScenario();
+        const lastEvent = await generateScenario();
 
         const summarySentence = `You are a ${cls.name}. ${cls.description} You were a ${bg.name}. ${bg.description} You are guided by ${pr.left} versus ${pr.right}: ${pr.description}`;
 
