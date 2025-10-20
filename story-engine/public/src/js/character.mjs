@@ -3,6 +3,7 @@ import { renderOptionsWindow } from './render.mjs';
 import { generateScenario, loadJSON } from './utils.mjs';
 
 document.addEventListener('DOMContentLoaded', async () => {
+    console.log("Character creation page loaded.");
     const character = getCharacter();
 
     const classes = await loadJSON('/assets/data/classes.json');
