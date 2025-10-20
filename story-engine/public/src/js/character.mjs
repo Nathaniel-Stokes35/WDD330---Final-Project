@@ -2,9 +2,9 @@ import { setCharacter, getCharacter, clearCharacter, setVariable } from './state
 import { renderOptionsWindow } from './render.mjs';
 import { generateScenario, loadJSON } from './utils.mjs';
 
-const classes = loadJSON('src/assets/data/classes.json');
-const backgrounds = loadJSON('src/assets/data/backgrounds.json');
-const principles = loadJSON('src/assets/data/principles.json');
+const classes = await loadJSON('/src/assets/data/classes.json');
+const backgrounds = await loadJSON('/src/assets/data/backgrounds.json');
+const principles = await loadJSON('/src/assets/data/principles.json');
 
 document.addEventListener('DOMContentLoaded', () => {
     const character = getCharacter();
