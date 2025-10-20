@@ -74,7 +74,9 @@ The story system is built from nested JSON data that adapts based on environment
                     },
                     "timeoutResponse": "Days have passed since your hesitation — the figure is surely gone, along with whatever he was collecting information for.",
                     "image": "url.for.image",
-                    "next-eventID": 5
+                    "next-eventID": 5,
+                    "choices": [{"label": "(Fight!)", "fight":true }, {"label": "(Run)", "fight": false}],
+                    "animate": true
                 },
                 "Event_2": {
                     "event-id": 2,
@@ -87,7 +89,9 @@ The story system is built from nested JSON data that adapts based on environment
                     },
                     "timeoutResponse": "As you return the man is gone, the house he was pointing at, disappeared; you wander off wondering if he had just been a bad dream.",
                     "image": "url.for.image",
-                    "next-eventID": 6
+                    "next-eventID": 6,
+                    "choices": [{"label": "(Fight!)", "fight":true }, {"label": "(Run)", "fight": false}],
+                    "animate": true
                 }
                 // Additional events follow similar structure
             }
