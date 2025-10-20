@@ -11,7 +11,7 @@ export async function loadJSON(path) {
     }
 }
 
-const storyboard = await loadJSON('src/assets/storyboard.json');
+const storyboard = await loadJSON('/assets/storyboard.json');
 
 export async function isUrban(lat, lon, radius = 500, threshold = 50) {
   const query = `
