@@ -4,13 +4,13 @@ import { generateScenario, loadJSON } from './utils.mjs';
 
 console.log("First Test... PASS");
 
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', async () => {
     console.log("Second Test... PASS");
     const character = getCharacter();
 
-    const classes = loadJSON('/assets/data/classes.json');
-    const backgrounds = loadJSON('/assets/data/backgrounds.json');
-    const principles = loadJSON('/assets/data/principles.json');
+    const classes = await loadJSON('/assets/data/classes.json');
+    const backgrounds = await loadJSON('/assets/data/backgrounds.json');
+    const principles = await loadJSON('/assets/data/principles.json');
 
     const form = document.getElementById('characterForm');
     const summary = document.getElementById('characterSummary');
