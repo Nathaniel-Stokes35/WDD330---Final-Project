@@ -2,13 +2,15 @@ import { setCharacter, getCharacter, clearCharacter, setVariable } from './state
 import { renderOptionsWindow } from './render.mjs';
 import { generateScenario, loadJSON } from './utils.mjs';
 
-document.addEventListener('DOMContentLoaded', async () => {
-    console.log("Character creation page loaded.");
+console.log("First Test... PASS");
+
+document.addEventListener('DOMContentLoaded', () => {
+    console.log("Second Test... PASS");
     const character = getCharacter();
 
-    const classes = await loadJSON('/assets/data/classes.json');
-    const backgrounds = await loadJSON('/assets/data/backgrounds.json');
-    const principles = await loadJSON('/assets/data/principles.json');
+    const classes = loadJSON('/assets/data/classes.json');
+    const backgrounds = loadJSON('/assets/data/backgrounds.json');
+    const principles = loadJSON('/assets/data/principles.json');
 
     const form = document.getElementById('characterForm');
     const summary = document.getElementById('characterSummary');
