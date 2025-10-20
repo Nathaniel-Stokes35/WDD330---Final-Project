@@ -6,6 +6,11 @@ loadForm();
 
 async function loadForm() {
     const character = getCharacter();
+    
+    if (character) {
+        renderSummary(character);
+        return;
+    }
 
     // Load all JSON data
     const classes = await loadJSON('/assets/data/classes.json');
@@ -23,10 +28,6 @@ async function loadForm() {
     }
 
     // If a character already exists, show summary
-    if (character) {
-        renderSummary(character);
-        return;
-    }
 
     // Populate dropdown selects
     populateSelect('charClass', classes);
