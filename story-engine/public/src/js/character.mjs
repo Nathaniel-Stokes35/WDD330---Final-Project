@@ -1,6 +1,5 @@
 import { setCharacter, getCharacter, clearCharacter, setVariable } from './state.mjs';
 import { renderOptionsWindow } from './render.mjs';
-import { generateScenario, loadJSON } from './utils.mjs';
 
 loadForm();
 
@@ -47,7 +46,6 @@ async function loadForm() {
         const cls = classes.find(c => c.id === document.getElementById('charClass').value);
         const bg = backgrounds.find(b => b.id === document.getElementById('charBackground').value);
         const pr = principles.find(p => p.id === document.getElementById('charPrinciple').value);
-        const lastEvent = await generateScenario();
 
         // Apply background attributes
         bg.att.forEach(attr => {
